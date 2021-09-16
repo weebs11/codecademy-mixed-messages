@@ -1,6 +1,6 @@
-// Main JS file for Mixed Messages
-// testing some changes for the branch
+// Main JS file for Mixed Messages Codecademy project
 
+// Declare arrays of different parts of speech for Mad libs.
 const noun = [
   'actor',
   'airport',
@@ -47,7 +47,7 @@ const adverb = [
   'urgently',
   'wildly',
 ];
-const name = [
+const personName = [
   'Kelly',
   'Elizabeth',
   'Ben',
@@ -101,7 +101,7 @@ const buildString = (madLib) => {
   switch (madLib) {
     case 0:
       console.log(
-        `Please excuse ${chooseWord(name)}, who is far too ${chooseWord(
+        `Please excuse ${chooseWord(personName)}, who is far too ${chooseWord(
           adjective
         )} to attend ${chooseWord(noun)} class.`
       );
@@ -128,14 +128,44 @@ const buildString = (madLib) => {
       );
       break;
     case 2:
-      console.log('test3');
+      console.log(
+        `It was Thanksgiving, and the scent of succulent roast ${chooseWord(
+          noun
+        )} wafted through my house. "${chooseWord(
+          personName
+        )}, it's time to ${chooseWord(
+          verb
+        )}!" my mother called. I couldn't wait to get my ${chooseWord(
+          bodyPart
+        )} on that ${chooseWord(
+          adjective
+        )} Thanksgiving meal. My family sat around the ${chooseWord(
+          room
+        )} ${chooseWord(
+          noun
+        )}. The table was laid ou twith every kind of ${chooseWord(
+          noun
+        )} imaginable.`
+      );
+      break;
+    case 3:
+      console.log(
+        `After hiding the paining in his ${chooseWord(
+          noun
+        )} for two years, he grew ${chooseWord(
+          adjective
+        )} and tried to sell it to a ${chooseWord(
+          noun
+        )} in Florence, but was caught.`
+      );
       break;
     default:
-      console.log('default');
-      break;
+      console.log('Error!');
   }
 };
 
-const stringChoice = Math.floor(Math.random() * 3);
+// Pick a random number 0-2 to determine which Mad Lib is selected.
+const stringChoice = Math.floor(Math.random() * 4);
 
+// Call the Mad Lib with the random number as the parameter.
 buildString(stringChoice);
